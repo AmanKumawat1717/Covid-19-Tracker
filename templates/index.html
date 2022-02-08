@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>covid-19 Tracker</title>
+  </head>
+  <body>
+
+  <div class="container heading">
+    <h1>Covid-19 Tracker</h1>
+  </div>
+
+  <div class="container main">
+    <div class="row">
+      <div class="col-sm-4 d1">
+        <h2>Let's Stay Safe & Fight</h2>
+      </div>
+      <div class="col-sm-4  d1">
+        <img src="../static/images/covid-19-check.jpg" width="250px" height="150px"  >
+      </div>
+      <div class="col-sm-4 d1">
+        <h2>Together Against CoronaVirus</h2>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container d2">
+  <div class="row">
+    <div class="col-12 d2">
+      <h3>COVID-19 UPDATES</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 d2">
+      <div class="card">
+        <div class="card-body">
+          <p>{{t_active}}</p>
+          <h5 class="card-title">Total Active</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 d2">
+      <div class="card">
+        <div class="card-body">
+          <p>{{t_confirmed}}</p>
+          <h5 class="card-title">Total Confirmed</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 d2">
+      <div class="card">
+        <div class="card-body">
+          <p>{{t_recovered}}</p>
+          <h5 class="card-title">Total Recovered</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 d2">
+      <div class="card">
+        <div class="card-body">
+          <p>{{t_deaths}}</p>
+          <h5 class="card-title">Total Deaths</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <form method="POST" action="/statename/">
+    <div class="form-group">
+      <input type="text"  placeholder="Enter State name: " name="state_name">
+      <button type="submit" class="btn btn-primary ">Submit</button>
+    </div>
+  </form>
+</div>
+
+{% if state_n %}
+  <div class="container">
+    <p style="text-align: center; font-size: 30px; font-weight: bold; font-family: 'Cormorant Garamond', serif; color: red;">{{state_n}}</p>
+  </div>
+{% endif %}
+
+{% if Active  %}
+<div class="container global">
+	<div class="row">
+		<div class="col-4 dp">
+			<i class="fa fa-user-plus person person1" aria-hidden="true"></i>
+   			<h3 class="ah3" >Active<br>{{Active}}</h3>		
+   	</div>
+   	<div class="col-4 dp">
+   			<p class='fas fa-user-check person person2'></p>
+   			<h3 class="rh3">Recovered<br>{{Recover}}</h3> 			
+  	</div>
+   	<div class="col-4 dp">
+   		<p class='fas person person3 fa-user-minus'></p>
+   		<h3 class="dh3" >Deaths<br>{{Death}}</h3>
+   	</div>
+  </div>
+</div>
+{% endif %}
+
+
+<div class="container d2">
+  <div class="row">
+    <div class="col-12 d2">
+      <h3>ABOUT COVID-19</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-5 back">
+      <img src="../static/images/back.jpg" width="100%" height="100%">
+    </div>
+    <div class="col-7 content">
+      <p>COVID-19 is a new strain of coronavirus that has not been previously identified in humans. The COVID-19 is the cause of an outbreak of respiratory illness first detected in Wuhan, Hubei province, China.
+      Since December 2019, cases have been identified in a growing number of countries.
+      Coronaviruses are a large family of viruses that are known to cause illness ranging from the common cold to more severe diseases such as Severe Acute Respiratory syndrome (SARS) and Middle East Respiratory Syndrome (MERS).</p>
+    </div>
+  </div>
+</div>
+
+<div class="container d2">
+  <div class="row">
+    <div class="col-12 ">
+      <h3>CoronaVirus Symptoms</h3>
+    </div>
+  </div>
+
+  <div class="row d3">
+    <div class="col-4">
+      <img src="../static/images/th.jpg" height="125px">
+      <p>Cough</p>
+    </div>
+    <div class="col-4">
+      <img src="../static/images/th (6).jpg" height="125px">
+      <p>Difficulty in Breathing</p>
+    </div>
+    <div class="col-4">
+      <img src="../static/images/th (2).jpg" height="125px">
+      <p>Fever</p>
+    </div>
+  </div>
+
+  <div class="row d3">
+    <div class="col-4">
+      <img src="../static/images/th (3).jpg" height="125px">
+      <p>Cold</p>
+    </div>
+    <div class="col-4">
+      <img src="../static/images/th (4).jpg" height="125px">
+      <p>Running Nose</p>
+    </div>
+    <div class="col-4">
+      <img src="../static/images/th (5).jpg" height="125px">
+      <p>Tiredness</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row d2">
+    <div class="col-12">
+      <h3>Steps For Prevention Against Coronavirus</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row d3">
+    <div class="col-4">
+      <div class="card center">
+        <img  src="../static/images/th (7).jpg" height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">Wash your hands regularly for 20 seconds,with soap and water or alcohol-based hund rub.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card center">
+        <img  src="../static/images/th (13).jpg"  height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">Stay home and self-isolate from others in the household if you feel unwell.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card center">
+        <img  src="../static/images/th (14).jpg" height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">Cover your nose and mouth with a disposable tissue or fiexed elbow when you cough or sneeze.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d3">
+    <div class="col-4">
+      <div class="card center">
+        <img  src="../static/images/th (10).jpg" height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">Stay informed by watching news and follow the recommended practices.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card center">
+        <img src="../static/images/th (11).jpg" height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">Avoid close contact(1 meter or 3 feet) with people who are unwell.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card center">
+        <img  src="../static/images/th (12).jpg" height="125px" width="70%" >
+        <div class="card-body">
+          <p class="card-text">If you have fever,cough and difficulty in breathing. Seek medical care early.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container footer">
+  <div class="row">
+    <div class="col-12">
+      <p>copyright by Aman Kumawat</p>
+    </div>
+  </div>
+</div>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  </body>
+</html>
